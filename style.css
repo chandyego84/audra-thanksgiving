@@ -120,6 +120,8 @@ footer {
     z-index: 1000;
     justify-content: center;
     align-items: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 .modal-content {
@@ -127,8 +129,8 @@ footer {
     padding: 20px;
     border-radius: 8px;
     position: relative;
-    width: 95%;
-    max-width: 1200px;
+    width: 100%;
+    max-width: 100%;
     height: 95vh;
     max-height: 95vh;
     overflow: auto;
@@ -156,8 +158,7 @@ footer {
     padding-top: 50px;
 }
 
-.modal-content iframe,
-.modal-content video {
+.modal-content iframe {
     width: 100%;
     height: calc(95vh - 90px);
     border: none;
@@ -239,5 +240,25 @@ footer {
 
     .intro-text {
         padding: 1rem 0;
+    }
+}
+
+/* Additional responsive adjustments */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 100%;
+        height: 100vh;
+        max-height: 100vh;
+        margin: 0;
+        padding: 10px;
+    }
+
+    .modal-content iframe {
+        height: calc(100vh - 90px);
+    }
+
+    .modal-close {
+        top: 10px;
+        right: 10px;
     }
 }

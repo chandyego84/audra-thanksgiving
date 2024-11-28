@@ -77,7 +77,14 @@ function openModal(content, type, src) {
     scrollPosition = window.pageYOffset;
     
     if (type === "pdf") {
-        modalBody.innerHTML = `<iframe src="${src}" title="PDF Viewer"></iframe>`;
+        modalBody.innerHTML = `
+            <iframe 
+                src="${src}" 
+                title="PDF Viewer" 
+                width="100%" 
+                height="100%" 
+                style="border: none;">
+            </iframe>`;
     } else if (type === "video") {
         console.log({src})
         modalBody.innerHTML = ` 
