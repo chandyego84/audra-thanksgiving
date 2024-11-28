@@ -7,8 +7,8 @@ const letters = [
 ];
 
 const videos = [
-    { label: "\"Audra the Explorer\" from Dad", src: "videos/DadVideo1.mp4" },
-    { label: "\"Audra's Anthem\" from Dad", src: "videos/DadVideo2.mp4" },
+    { label: "\"Audra the Explorer\" from Dad", src: "https://www.youtube.com/embed/wnBLsm6stVk" },
+    { label: "\"Audra's Anthem\" from Dad", src: "https://www.youtube.com/embed/tOr7EY_JOAs" },
 ];
 
 const bgMusic = document.getElementById('bgMusic');
@@ -79,12 +79,17 @@ function openModal(content, type, src) {
     if (type === "pdf") {
         modalBody.innerHTML = `<iframe src="${src}" title="PDF Viewer"></iframe>`;
     } else if (type === "video") {
+        console.log({src})
         modalBody.innerHTML = ` 
-            <video controls autoplay>
-                <source src="${src}" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        `;
+            <iframe 
+                width="560" 
+                height="315" 
+                autopla
+                src="${src}?autoplay=1" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>`;
         bgMusic.pause();
     }
     
