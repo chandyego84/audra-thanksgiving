@@ -139,9 +139,15 @@ letters.forEach((letter) => {
 
 const videosContainer = document.getElementById("videos-container");
 videos.forEach((video) => {
-    const content = `<video controls>
-                        <source src="${video.src}" type="video/mp4">
-                        Your browser does not support the video tag.
-                     </video>`;
+    // YouTube videos should use an iframe, not a <video> tag
+    const content = `
+        <iframe 
+            width="560" 
+            height="315" 
+            src="${video.src}" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+            allowfullscreen>
+        </iframe>`;
     createToggleableItem(videosContainer, video.label, content, "video", video.src);
 });
