@@ -84,7 +84,6 @@ function openModal(content, type, src) {
             <iframe 
                 width="560" 
                 height="315" 
-                autopla
                 src="${src}?autoplay=1" 
                 frameborder="0" 
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
